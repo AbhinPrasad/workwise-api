@@ -4,11 +4,8 @@ import {
   DeleteDateColumn,
   Entity,
   Index,
-  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
-  JoinColumn,
-  OneToOne,
 } from 'typeorm'
 
 @Entity('user')
@@ -28,8 +25,14 @@ export class UserEntity {
   @Column({ type: String, nullable: true })
   password?: string | null
 
-  @Column({ type: String, nullable: true })
+  @Column({ name: 'user_name', type: String, nullable: true })
   userName: string | null
+
+  @Column({ name: 'profile_img_url', type: String, nullable: true })
+  profileImgUrl: string | null
+
+  @Column({ type: 'tinyint', default: 1 })
+  status: number
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date
@@ -43,6 +46,6 @@ export class UserEntity {
   @Column({ name: 'updated_by', type: 'json' })
   updatedBy: object
 
-  @DeleteDateColumn()
+  @DeleteDateColumn({ name: 'deleted_at' })
   deletedAt: Date
 }

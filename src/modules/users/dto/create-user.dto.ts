@@ -8,7 +8,7 @@ import {
 
 export class CreateUserDto {
   @IsFirebasePushId()
-  uid: string
+  firebaseUid: string
 
   @IsString()
   @IsOptional()

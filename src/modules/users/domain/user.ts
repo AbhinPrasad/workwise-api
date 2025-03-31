@@ -8,16 +8,16 @@ export class User {
   firebaseUid: string
 
   @ApiProperty()
-  userName: string
+  userName: string | null
 
   @ApiProperty()
   email: string
 
   @ApiProperty()
-  password: string
+  password: string | null
 
   @ApiProperty()
-  profileImgUrl: string
+  profileImgUrl: string | null
 
   @ApiProperty()
   status: number

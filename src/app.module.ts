@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config'
 import dbConfig from './config/db.config'
 import appConfig from './config/app.config'
 import { DatabaseModule } from './database/database.module'
+import { APP_FILTER } from '@nestjs/core'
+import { ErrorFilter } from './common/filters/exception.filter'
 
 @Module({
   imports: [
@@ -13,5 +15,6 @@ import { DatabaseModule } from './database/database.module'
     }),
     DatabaseModule,
   ],
+  providers: [{ provide: APP_FILTER, useClass: ErrorFilter }],
 })
 export class AppModule {}

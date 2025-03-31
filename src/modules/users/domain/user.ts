@@ -5,6 +5,21 @@ export class User {
   id: string
 
   @ApiProperty()
+  firebaseUid: string
+
+  @ApiProperty()
+  userName: string
+
+  @ApiProperty()
+  email: string
+
+  @ApiProperty()
+  password: string
+
+  @ApiProperty()
+  profileImgUrl: string
+
+  @ApiProperty()
   status: number
 
   @ApiProperty({ type: Date })

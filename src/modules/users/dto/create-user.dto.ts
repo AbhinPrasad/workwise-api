@@ -7,7 +7,7 @@ import {
 } from 'class-validator'
 
 export class CreateUserDto {
-  @IsFirebasePushId()
+  @IsString()
   firebaseUid: string
 
   @IsString()

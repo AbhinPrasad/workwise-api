@@ -50,7 +50,7 @@ export default registerAs<DatabaseConfig>('db', () => {
     username: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASS || '',
     synchronize: process.env.DB_SYNC === 'true',
-    autoLoadEntities: process.env.AUTO_LOAD_ENTITIES === 'true',
+    autoLoadEntities: true,
     logging: process.env.NODE_ENV === 'development',
   }
 })

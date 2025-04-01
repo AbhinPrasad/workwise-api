@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm'
 
-@Entity('user')
+@Entity('users')
 export class UserEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string
@@ -31,7 +31,7 @@ export class UserEntity {
   @Column({ name: 'profile_img_url', type: String, nullable: true })
   profileImgUrl: string | null
 
-  @Column({ type: 'tinyint', default: 1 })
+  @Column({ type: 'smallint', default: 1 })
   status: number
 
   @CreateDateColumn({ name: 'created_at' })

@@ -25,9 +25,7 @@ export class ErrorFilter implements ExceptionFilter {
 
       message =
         typeof response === 'object' && response
-          ? (response as any).message ||
-            (response as any).error ||
-            JSON.stringify(response)
+          ? (response as any).message || (response as any).error || response
           : String(response)
     } else if (exception instanceof Error) {
       statusCode = HttpStatus.INTERNAL_SERVER_ERROR

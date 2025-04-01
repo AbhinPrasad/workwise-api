@@ -31,6 +31,7 @@ export class UsersService {
       ...createUserDto,
       password,
       createdBy,
+      updatedBy: createdBy,
     })
   }
 }
